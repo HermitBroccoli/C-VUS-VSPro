@@ -9,22 +9,51 @@ int main() {
 
 	setlocale(LC_ALL, "Russian");
 
-	float deposit_amount,
-		deposit_one,
-		deposit_two,
-		deposit_three;
+	float x, y;
 
-	cout << "Введите сумму вкладда: ";
-	cin >> deposit_amount;
+	cout << "Введите значение кординаты x: ";
+	cin >> x;
 
-	deposit_one = (round((((deposit_amount * 1) / 100) / 12) * 100) / 100) * 3;
-	deposit_two = (round((((deposit_amount * 2) / 100) / 12) * 100) / 100) * 6;
-	deposit_three = (round((((deposit_amount * 3) / 100) / 12) * 100) / 100) * 12;
+	cout << "Введите значение кординаты y: ";
+	cin >> y;
 
-	cout << deposit_one << endl << deposit_two << endl << deposit_three << endl;
+	if (y > x * x && y < exp(-abs(x)))
+		cout << "Принадлежит";
 
 	return 0;
 }
+
+//int main() {
+//
+//	setlocale(LC_ALL, "Russian");
+//
+//	float deposit_amount,
+//		deposit_one,
+//		deposit_two,
+//		deposit_three;
+//
+//	cout << "Введите сумму вкладда: ";
+//	cin >> deposit_amount;
+//
+//	deposit_one = (round((((deposit_amount * 1) / 100) / 12) * 100) / 100) * 3;
+//	deposit_two = (round((((deposit_amount * 2) / 100) / 12) * 100) / 100) * 6;
+//	deposit_three = (round((((deposit_amount * 3) / 100) / 12) * 100) / 100) * 12;
+//
+//	if (deposit_one > deposit_three) 
+//	{
+//		cout << "Первый вклад выгоднее для клиента";
+//	}
+//	else if (deposit_two > deposit_three)
+//	{
+//		cout << "Второй вклад выгоднее для клиента";
+//	}
+//	else
+//	{
+//		cout << "Третий вклад выгоднее для клиента";
+//	}
+//
+//	return 0;
+//}
 
 //int main() {
 //

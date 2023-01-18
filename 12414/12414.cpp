@@ -5,23 +5,138 @@
 
 using namespace std;
 
-int main() {
-
+int main()
+{
 	setlocale(LC_ALL, "Russian");
 
-	float x, y;
+	double x,e,n;
 
-	cout << "Введите значение кординаты x: ";
-	cin >> x;
+	while (0<x<1)
+	{
 
-	cout << "Введите значение кординаты y: ";
-	cin >> y;
-
-	if (y > x * x && y < exp(-abs(x)))
-		cout << "Принадлежит";
+	}
 
 	return 0;
 }
+
+//int main()
+//{
+//	setlocale(LC_ALL, "Russian");
+//
+//	int a, b, c, n;
+//
+//	cout << "Введите n: ";
+//	cin >> n;
+//
+//	for (c = 0; c <= n; c++)
+//	{
+//		for (b = 0; b <= c; b++)
+//		{
+//			for (int a = 0; a <= b; a++)
+//			{
+//				if (a*a+b*b == c*c)
+//				{
+//					cout << a << "^2 + " << b << "^2 = " << c << "^2" << endl;
+//				}
+//			}
+//		}
+//	}
+//
+//	return 0;
+//}
+
+//int main()
+//{
+//    setlocale(LC_ALL, "Russian");
+//
+//    int n = 0;
+//    double e, f = 1., an, eps = 1.e-9;
+//    cout << "0<e<1  e="; cin >> e;
+//
+//    do
+//    {
+//        n++;
+//        f *= n;
+//        an = 2. * n / f;
+//    } while (an >= e - eps);
+//
+//    cout << "n=" << n << "\n";
+//    return 0;
+//}
+
+//int main()
+//{
+//	setlocale(LC_ALL, "Russian");
+//
+//	int n = 0;
+//	float s = 0;
+//
+//	cout << "Введите количество корней: ";
+//	cin >> n;
+//
+//	for (int i = 0; i < n; i++)
+//	{
+//		s = sqrt(2 + s);
+//	}
+//
+//	cout << s << endl;
+//
+//	return 0;
+//}
+
+//int main() 
+//{
+//	setlocale(LC_ALL, "Russian");
+//
+//	int x, a, b, c, F = 0;
+//
+//	cout << "Введите x: ";
+//	cin >> x;
+//
+//	cout << "Введите a: ";
+//	cin >> a;
+//
+//	cout << "Введите b: ";
+//	cin >> b;
+//
+//	cout << "Введите c: ";
+//	cin >> c;
+//
+//	if (a < 2)
+//	{
+//		F = ((-a) * pow(x, 2)) - (sqrt(b));
+//	}
+//	else if (a > 5 && c == 0)
+//	{
+//		F = (x - a) / (c * x);
+//	}
+//	else
+//	{
+//		F = (-x) / b;
+//	}
+//
+//	cout << F << endl;
+//
+//	return 0;
+//}
+
+//int main() {
+//
+//	setlocale(LC_ALL, "Russian");
+//
+//	float x, y;
+//
+//	cout << "Введите значение кординаты x: ";
+//	cin >> x;
+//
+//	cout << "Введите значение кординаты y: ";
+//	cin >> y;
+//
+//	if (y > x * x && y < exp(-abs(x)))
+//		cout << "Принадлежит";
+//
+//	return 0;
+//}
 
 //int main() {
 //

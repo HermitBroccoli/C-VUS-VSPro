@@ -1,23 +1,138 @@
 ﻿// 12414.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
 //
 
-#include <iostream>
+#include <stdio.h>
+#include <math.h>
+#include <windows.h>
+#include <clocale>
 
 using namespace std;
 
-int main()
-{
-	setlocale(LC_ALL, "Russian");
+#define ARRSIZE 10
+int main(void) {
 
-	double x,e,n;
+    setlocale(LC_ALL, "Russian");
 
-	while (0<x<1)
-	{
+    double arr[ARRSIZE] = { -1.4, -0.8, 2.2, -4.0, -5.5, 2.0, 0.0, 0.0, -15.0, 11.4 };
+    double max, sum, tmp;
+    int i, maxi, j;
 
-	}
 
-	return 0;
+    printf("\nИсходный массив:\n");
+    for (i = 0; i < ARRSIZE; ++i)
+        printf("ARR[%d] = %5.1f\n", i, arr[i]);
+
+    /* 1 */
+    maxi = 0;
+    max = fabs(arr[maxi]);
+    for (i = 1; i < ARRSIZE; ++i) {
+        if (max < fabs(arr[i])) {
+            maxi = i;
+            max = fabs(arr[maxi]);
+        }
+    }
+    printf("\nМаксимальный по модулю элемент:\nARR[%d] = %.1f\t%.1f\n", maxi, arr[maxi], max);
+
+    /* 2 */
+    i = 0;
+    sum = 0.0;
+    while (arr[i] < 0 && i < ARRSIZE)
+        ++i;
+    if (i == ARRSIZE) {
+        printf("\nВ массиве нет положительных элементов!\n");
+        goto THREE;
+    }
+    ++i;
+    while (arr[i] < 0 && i < ARRSIZE)
+        sum += arr[i++];
+    if (i == ARRSIZE) {
+        printf("\nВ массиве только один положительный элемент!\n");
+        goto THREE;
+    }
+    printf("\nСумма элементов между первым и вторым положительными равна %.1f\n", sum);
+
+
+    THREE:
+
+    for (j = ARRSIZE - 1; j >= 0 && arr[j] == 0.0; --j)
+        ;
+    if (j < 0) {
+        printf("\nВсе элементы в массиве нулевые\n");
+        return 0;
+    }
+    for (i = 0; i < j; ++i) {
+        while (arr[i] == 0 && i < j) {
+            tmp = arr[i];
+            arr[i] = arr[j];
+            arr[j--] = tmp;
+        }
+    }
+
+    printf("\nВсе нули в конце массива\n");
+    for (i = 0; i < ARRSIZE; ++i)
+        printf("ARR[%d] = %5.1f\n", i, arr[i]);
+
+    return 0;
 }
+
+//#include <iostream>
+//
+//using namespace std;
+//
+//int main()
+//{
+//	setlocale(LC_ALL, "Russian");
+//
+//	int a1[4] = {1, 5, 6, 7};
+//	int a2[4] = {5, 7, 6, 2};
+//
+//	int a3[4];
+//
+//	for (int i = 0; i < 4; i++)
+//	{
+//		a3[i] = a1[i] + a2[i];
+//	}
+//
+//	int a4[4];
+//	for (int i = 0; i < 4; i++)
+//	{
+//		a4[i] = a1[i] - a2[i];
+//	}
+//
+//	cout << "Сумма: ";
+//	for (int i = 0; i < 4; i++)
+//	{
+//		cout << a3[i] << " ";
+//	}
+//
+//	cout << endl << "Разность: ";
+//	for (int i = 0; i < 4; i++)
+//	{
+//		cout << a4[i] << " ";
+//	}
+//
+//	cout << endl;
+//
+//	return 0;
+//}
+
+//int main()
+//{
+//	setlocale(LC_ALL, "Russian");
+//
+//	double s = 0, a = 1, x, eps = 1e-6;
+//	int n = 1;
+//	cout << "x: ";
+//	cin >> x;
+//	while (abs(a) > eps) {
+//		s += a;
+//		a *= x * x / (n * (n + 1));
+//		n += 2;
+//	}
+//	cout << "ch(" << x << ") = " << s << endl;
+//
+//	return 0;
+//}
 
 //int main()
 //{

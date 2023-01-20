@@ -48,16 +48,12 @@ int main()
 
 	cout << endl << endl;
 
-	for (int i = 0; i < n; i++)
-	{
-		for (int j = 0; j < m; j++)
-		{						   
-			if (j != (k - 1))
-			{
-				matrix[i][j] = matrix[i][j + 1];
-				j++;
-			}
+	for (int i = k; i < nc; ++i) {
+		for (int row = 0; row < nr; ++row) {
+			matrix[row][col - 1] = matrix[row][col];
+
 		}
+		cout << endl;
 	}
 
 	for (int i = 0; i < n; i++)

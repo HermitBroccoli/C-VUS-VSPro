@@ -1,42 +1,162 @@
 ﻿// 12414.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
 //
 
-
 #include <iostream>
 
 using namespace std;
 
+int Random(int min, int max) {
+	return min + rand() % (max - min);
+}
+
 int main()
 {
-	const int n = 10;
-	float a[10] = {
-		1, 5, 8, 7, 2.25, 0.36, 0.650, -0.002, 0.36, 8.25
-	};
-	int t;
+
+	const int m = 9, n = 6;
+	int matrix[m][n];
+	int k;
+
+	while (k > 0 && k > m)
+	{
+		cout << "Введите номер столбца который нужно удалить: ";
+		cin >> k;
+	}
+
 
 	for (int i = 0; i < n; i++)
 	{
-		for (int j = i + 1; j < n; j++)
+		for (int j = 0; j < m; j++)
 		{
-			if (i % 2 != 0 && j % 2 != 0)
+			matrix[i][j] = Random(1, 10);
+			cout << matrix[i][j] << " ";
+		}
+		cout << endl;
+	}
+
+	cout << endl << endl;
+
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < m; j++)
+		{						   
+			if (j != k)
 			{
-				if (a[i] < a[j])
-				{
-					t = a[i];
-					a[i] = a[j];
-					a[j] = t;
-				}
+				cout << matrix[i][j] << " ";
 			}
 		}
+		cout << endl;
 	}
 
-	for (int i = 0; i < n; i++)
-	{
-		cout << a[i] << ' ';
-	}
 
 	return 0;
 }
+
+//int main()
+//{
+//
+//	const int n = 3;
+//	int matrix[n][n];
+//
+//	for (int i = 0; i < n; i++)
+//	{
+//		for (int j = 0; j < n; j++)
+//		{
+//			matrix[i][j] = Random(1, 10);
+//			cout << matrix[i][j] << " ";
+//		}
+//
+//		cout << endl;
+//	}
+//
+//	cout << endl << endl;
+//
+//	for (int i = 0; i < n; i++)
+//	{
+//		for (int j = 0; j < n; j++)
+//		{
+//			if (i < j || i == j) {
+//				cout << 1 << " ";
+//			}
+//			else
+//			{
+//				cout << matrix[i][j] << ' ';
+//			}
+//		}
+//
+//		cout << endl;
+//	}
+//
+//	return 0;
+//}
+
+//int main()
+//{
+//	const int col = 10, row = 10;
+//
+//	setlocale(LC_ALL, "Russian");
+//
+//	int arr[10][10] = {
+//		{1, -15, 5, 9, 2, 11, 9, 66, 111, 6},
+//		{2, -25, -6, 21, 12, 1, 4, 44, 6, 3}
+//	};
+//
+//	for (int i = 0; i < 10; i++)
+//	{
+//			
+//		double sum = 0;
+//		for (int j = 0; j < 10; j++)
+//		{
+//			sum += arr[j][i];
+//		}
+//
+//		double srz = sum / col;
+//
+//		double kol = 0;
+//		for (int k = 0; k < 10; k++)
+//		{
+//			if (arr[k][i] > srz)
+//			{
+//				kol++;
+//			}
+//		}
+//
+//		cout << "Столбец " << i+1 << ": среднее арифметическое значение: " << srz <<"; количество элементов: " << kol << endl;
+//	}
+//
+//	return 0;
+//}
+
+//int main()
+//{
+//	const int n = 10;
+//	float a[10] = {
+//		1, 5, 8, 7, 2.25, 0.36, 0.650, -0.002, 0.36, 8.25
+//	};
+//	int t;
+//
+//	for (int i = 0; i < n; i++)
+//	{
+//		for (int j = i + 1; j < n; j++)
+//		{
+//			if (i % 2 != 0 && j % 2 != 0)
+//			{
+//				if (a[i] < a[j])
+//				{
+//					t = a[i];
+//					a[i] = a[j];
+//					a[j] = t;
+//				}
+//			}
+//		}
+//	}
+//
+//	for (int i = 0; i < n; i++)
+//	{
+//		cout << a[i] << ' ';
+//	}
+//
+//	return 0;
+//}
 
 //int main()
 //{

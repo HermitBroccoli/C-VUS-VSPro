@@ -12,9 +12,15 @@ int Random(int min, int max) {
 int main()
 {
 
+	setlocale(LC_ALL, "Russian");
+
 	const int m = 9, n = 6;
-	int matrix[m][n];
+	int matrix[m][n], mm = m, nn = n;
 	int k;
+
+
+	cout << "Введите номер столбца который нужно удалить: ";
+	cin >> k;
 
 	while (k > 0 && k > m)
 	{
@@ -28,6 +34,13 @@ int main()
 		for (int j = 0; j < m; j++)
 		{
 			matrix[i][j] = Random(1, 10);
+		}
+	}
+
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < m - 1; j++)
+		{
 			cout << matrix[i][j] << " ";
 		}
 		cout << endl;
@@ -39,14 +52,22 @@ int main()
 	{
 		for (int j = 0; j < m; j++)
 		{						   
-			if (j != k)
+			if (j != (k - 1))
 			{
-				cout << matrix[i][j] << " ";
+				matrix[i][j] = matrix[i][j + 1];
+				j++;
 			}
+		}
+	}
+
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < m-1; j++)
+		{
+			cout << matrix[i][j] << " ";
 		}
 		cout << endl;
 	}
-
 
 	return 0;
 }

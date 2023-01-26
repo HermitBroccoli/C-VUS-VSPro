@@ -2,71 +2,131 @@
 //
 
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
 
 using namespace std;
 
-int Random(int min, int max) {
-	return min + rand() % (max - min);
-}
-
 int main()
 {
-
 	setlocale(LC_ALL, "Russian");
 
-	const int m = 9, n = 6;
-	int matrix[m][n], mm = m, nn = n;
-	int k;
 
-
-	cout << "Введите номер столбца который нужно удалить: ";
-	cin >> k;
-
-	while (k > 0 && k > m)
-	{
-		cout << "Введите номер столбца который нужно удалить: ";
-		cin >> k;
-	}
-
-
-	for (int i = 0; i < n; i++)
-	{
-		for (int j = 0; j < m; j++)
-		{
-			matrix[i][j] = Random(1, 10);
-		}
-	}
-
-	for (int i = 0; i < n; i++)
-	{
-		for (int j = 0; j < m - 1; j++)
-		{
-			cout << matrix[i][j] << " ";
-		}
-		cout << endl;
-	}
-
-	cout << endl << endl;
-
-	for (int i = k; i < nc; ++i) {
-		for (int row = 0; row < nr; ++row) {
-			matrix[row][col - 1] = matrix[row][col];
-
-		}
-		cout << endl;
-	}
-
-	for (int i = 0; i < n; i++)
-	{
-		for (int j = 0; j < m-1; j++)
-		{
-			cout << matrix[i][j] << " ";
-		}
-		cout << endl;
-	}
 
 	return 0;
 }
+
+//int main()
+//{
+//    setlocale(LC_ALL, "Russian");
+//
+//    const int N = 10;
+//    int matrix[N][N];
+//    int n;
+//
+//    do
+//    {
+//        cout << "Введите размер матрицы (не больше 10): ";
+//        cin >> n;
+//
+//    } while (n > 10);
+//
+//    srand(time(NULL));
+//
+//    for (int i = 0; i < n; ++i)
+//        for (int j = 0; j < n; ++j)
+//            matrix[i][j] = rand() % 89 + 10; // заполняем числами от 10 до 99
+//
+//    for (int i = 0; i < n; ++i)
+//    {
+//        for (int j = 0; j < n; ++j)
+//            cout << matrix[i][j] << ' ';
+//        cout << endl;
+//    }
+//
+//    for (int i = 0, k = n - 1; i < n; ++i, --k)
+//        for (int j = 0, l = n - 1; l > i; ++j, --l)
+//        {
+//            int buf = matrix[j][i];
+//            matrix[j][i] = matrix[k][l];
+//            matrix[k][l] = buf;
+//        }
+//
+//    cout << endl;
+//    for (int i = 0; i < n; ++i)
+//    {
+//        for (int j = 0; j < n; ++j)
+//            cout << matrix[i][j] << ' ';
+//        cout << endl;
+//    }
+//    return 0;
+//}
+
+//int Random(int min, int max) {
+//	return min + rand() % (max - min);
+//}
+
+//int main()
+//{
+//
+//	setlocale(LC_ALL, "Russian");
+//
+//	const int m = 9, n = 6;
+//	int matrix[n][m], matrix2[n][m], mm = m, nn = n;
+//	int k = 0;
+//
+//
+//	cout << "Введите номер столбца который нужно удалить: ";
+//	cin >> k;
+//
+//	while (k > 0 && k > m)
+//	{
+//		cout << "Введите номер столбца который нужно удалить: ";
+//		cin >> k;
+//	}
+//
+//
+//	for (int i = 0; i < n; i++)
+//	{
+//		for (int j = 0; j < m; j++)
+//		{
+//			matrix[i][j] = Random(1, 10);
+//		}
+//	}
+//
+//	for (int i = 0; i < n; i++)
+//	{
+//		for (int j = 0; j < m; j++)
+//		{
+//			if (j != k)
+//			{
+//				matrix2[i][(j < k ? j : (j - 1))] = matrix[i][j];
+//			}
+//		}
+//	}
+//
+//	for (int i = 0; i < n; i++)
+//	{
+//		for (int j = 0; j < m; j++)
+//		{
+//			cout << matrix[i][j] << " ";
+//		}
+//		cout << endl;
+//	}
+//
+//	cout << endl << endl;
+//
+//	for (int i = 0; i < n; i++)
+//	{
+//		for (int j = 0; j < m - 1; j++)
+//		{
+//			cout << matrix2[i][j] << " ";
+//		}
+//		cout << endl;
+//	}
+//
+//	return 0;
+//}
 
 //int main()
 //{
